@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="cacheEnabled" value="false" />
+		<setting name="logPrefix" value="dao." />
+		<setting name="defaultExecutorType" value="REUSE"/>
+		<setting name="callSettersOnNulls" value="true"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="obj" type="java.lang.Object"/>
+	</typeAliases>
+	<!--<typeHandlers>-->
+		<!--<typeHandler handler="com.bicon.bt.platform.utils.handler.StringTypeHandler"/>-->
+	<!--</typeHandlers>-->
+	<!--<plugins>-->
+		<!--<plugin interceptor="com.bicon.bt.platform.utils.page.PageInterceptor"></plugin>-->
+	<!--</plugins>-->
+</configuration>

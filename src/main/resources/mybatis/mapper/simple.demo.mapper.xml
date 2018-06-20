@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="simple.demo">
+	<!-- ******************************   样例demo功能管理【Kingleading】  begin  ******************************* -->
+	<select id="query" parameterType="map" resultType="map">
+		SELECT * FROM TB_DEMO
+	</select>
+
+	<update id="add" parameterType="map">
+		INSERT INTO TB_DEMO(DEMO_NAME, CREATE_TIME, DEMO_DESC) VALUES(#{demoName}, CURRENT_TIMESTAMP(), #{demoDesc})
+	</update>
+
+	<update id="update" parameterType="map">
+		UPDATE TB_DEMO SET
+			DEMO_NAME = #{demoName},
+			DEMO_DESC = #{demoDesc}
+		WHERE ID = #{id}
+	</update>
+
+	<update id="delete" parameterType="map">
+		DELETE FROM TB_DEMO WHERE ID = #{id}
+	</update>
+</mapper>
