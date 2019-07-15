@@ -13,7 +13,6 @@ import java.util.Map;
 //@Scope("prototype")
 public class BaseController extends SuperController{
 	private final Logger LOG = Logger.getLogger(BaseController.class);
-
 	/**
 	 * @brief
 	 *      通用【分页查询】操作（支持单表及多表关联查询）
@@ -70,8 +69,8 @@ public class BaseController extends SuperController{
 			ret.put("success", "00000000");
 			ret.put("retMsg", "处理成功");
 			ret.put("data", retObj);
-			System.out.println("common findAll: " + fullSqlId + " 处理成功:" + paramsMap);
-			LOG.info("common findAll: " + fullSqlId + " 处理成功:" + paramsMap);
+			System.out.println("common findAll: " + fullSqlId + " 处理成功:" + paramsMap + " data: " + retObj );
+			LOG.info("common findAll: " + fullSqlId + " 处理成功:" + paramsMap + " data: " + retObj );
 		}catch (Exception e){
 			e.printStackTrace();
 			LOG.error("findAll: " + fullSqlId + " 处理失败", e);
@@ -100,6 +99,8 @@ public class BaseController extends SuperController{
 		try{
 			Map<String, Object> paramsMap = getParameterMap(req);
 			service.dealOne(fullSqlId, paramsMap);
+			ret.put("success", "00000000");
+			ret.put("retMsg", "处理成功");
 			System.out.println("common dealOne: " + fullSqlId + " 处理成功:" + paramsMap);
 			LOG.info("common dealOne: " + fullSqlId + " 处理成功:" + paramsMap);
 		}catch (Exception e){

@@ -7,7 +7,7 @@
 	</select>
 
 	<update id="add" parameterType="map">
-		INSERT INTO TB_DEMO(DEMO_NAME, CREATE_TIME, DEMO_DESC) VALUES(#{demoName}, CURRENT_TIMESTAMP(), #{demoDesc})
+		INSERT INTO TB_DEMO(DEMO_NAME, DEMO_DESC) VALUES(#{demoName},#{demoDesc})
 	</update>
 
 	<update id="update" parameterType="map">
